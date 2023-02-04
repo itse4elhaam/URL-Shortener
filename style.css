@@ -1,0 +1,596 @@
+:root {
+	/* * Primary */
+	---Cyan: hsl(180, 66%, 49%);
+	---DarkViolet: hsl(257, 27%, 26%);
+
+	/* * Secondary */
+	---Red: hsl(0, 87%, 67%);
+
+	/* * Neutral */
+	---Gray: hsl(0, 0%, 75%);
+	---GrayishViolet: hsl(257, 7%, 63%);
+	---VeryDarkBlue: hsl(255, 11%, 22%);
+	---VeryDarkViolet: hsl(260, 8%, 14%);
+}
+
+nav {
+	font-weight: 600;
+	height: 10vh;
+	justify-content: space-between;
+	align-items: center;
+	margin: 1rem 0;
+}
+.UserLogIn {
+	gap: 1rem;
+}
+.navLogo{
+	filter: invert(73%) sepia(100%) saturate(365%)
+			hue-rotate(120deg) brightness(85%) contrast(91%);
+}
+/* *Styling the hero section here:  */
+.heroSection {
+	margin: 1rem unset;
+}
+.left {
+	margin: 20vh 0 5vh 0;
+}
+h1 {
+	font-size: clamp(0.75rem, 6vh + 1rem, 5rem);
+	line-height: clamp(2rem, 10vh + 1rem, 6rem);
+}
+.cyanH1{
+	color: var(---Cyan);
+}
+.SubH1 {
+	line-height: 2rem;
+	font-size: clamp(0.5rem, 1.25vh + 0.5rem, 1.25rem);
+	padding-left: 0.25vw;
+}
+.textNav {
+	color: var(---Gray);
+	padding: 1.75rem;
+	gap: 2rem;
+}
+.navtxt {
+	font-size: smaller;
+}
+.textNav li:hover,
+.UserLogIn a:hover {
+	cursor: pointer;
+	color: black;
+}
+@media only screen and (width >800px) {
+	.right {
+		position: absolute;
+		right: -6vw;
+		margin-top: min(15vh, 4rem);
+	}
+}
+.hero-illustration {
+	width: clamp(30rem, 45vw, 40rem);
+}
+
+/* This whole code is for the arrow down btn:  */
+/* .btn-scrollDown{
+	position: relative;
+	height: 5rem; 
+	width: 5rem;
+	border-radius: 50%;
+} */
+.arrow {
+	position: relative;
+	bottom: 3px;
+	color: white;
+	font-size: 2rem;
+	animation: arrow 2s infinite;
+	-webkit-animation: arrow 2s infinite;
+}
+
+@keyframes arrow {
+	0% {
+		opacity: 0.75;
+		transform: translateY(0);
+	}
+	25% {
+		opacity: 1;
+		transform: translateY(2px);
+	}
+	50% {
+		opacity: 1;
+		transform: translateY(4px);
+	}
+	75% {
+		opacity: 1;
+		transform: translateY(2px);
+	}
+	100% {
+		opacity: 0.75;
+		transform: translateY(0);
+	}
+}
+
+@-webkit-keyframes arrow /*Safari and Chrome*/ {
+	/* 0% {
+		opacity: 0.5;
+		transform: translateY(5px);
+	}
+	80% {
+		opacity: 1;
+		transform: translateY(20px);
+	}
+	100% {
+		opacity: 0.5;
+		transform: translateY(0);
+	} */
+}
+
+.arrows path.a1 {
+	animation-delay: -0.5s;
+	-webkit-animation-delay: -0.5s; /* Safari and Chrome */
+}
+
+/** Styling the main section here: */
+main {
+	margin-top: 30vh;
+	background-color: rgb(239, 241, 247, 0.96);
+	position: relative;
+}
+
+.UrlInputWrapper {
+	height: 15vh;
+	background: var(---DarkViolet) url(./images/bg-shorten-desktop.svg);
+	background-size: cover;
+	border-radius: 6px;
+	gap: 1.75rem;
+	position: relative;
+	top: -7.5vh;
+}
+.UrlInput {
+	width: clamp(25rem, 65%, 70rem);
+	padding: 1rem 0.5rem;
+	border: 1px solid white;
+	border-radius: 6px;
+}
+.UrlInput::placeholder {
+	color: var(---Red);
+	padding: 6px;
+}
+.UrlInput:focus {
+	outline: none;
+	border: 3px solid var(---Red);
+}
+.ItalicLabel {
+	display: none;
+	position: absolute;
+	font-size: x-small;
+	color: var(---Red);
+	font-style: italic;
+	top: 50%;
+	left: 2%;
+	transition: all 250ms ease-in-out;
+}
+.UrlInput:focus + .ItalicLabel {
+	display: block;
+}
+.btnShorten {
+	padding: 1rem 2.5rem;
+	border-radius: 6px;
+}
+.loading {
+	margin-inline: auto;
+	max-height: 50%;
+	width: max(50%, 20rem);
+	border-radius: 0.75rem;
+    font-size: clamp(8px, 2vh + .5rem, 16px);	
+	font-weight:lighter;
+    text-align: center;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+    animation: pulse 3s ease-in-out infinite;
+	gap: 2.5%;
+	padding: 1%;
+  }
+   .loading span {
+	width: clamp(max-content ,50%, max-content);
+    display: inline-block;
+    overflow: hidden;
+	white-space: nowrap;
+    animation: typewriter 2s steps(40, end) infinite;
+	color: var(---DarkViolet);
+  }
+
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  @keyframes typewriter {
+    0% {
+      width: 0;
+    }
+    10% {
+      width: 2.5%;
+    }
+    20% {
+      width: 5%;
+    }
+    30% {
+      width: 7.5%;
+    }
+    40% {
+      width: 10%;
+    }
+    50% {
+      width: 12.5%;
+    }
+    60% {
+      width: 15%;
+    }
+    70% {
+      width: 17.5%;
+    }
+    80% {
+      width: 20%;
+    }
+    90% {
+      width: 22.5%;
+    }
+    100% {
+      width: 25%;
+    }
+  }
+
+.copied {
+	background-color: var(---VeryDarkViolet);
+}
+.LinksWrapper {
+	margin-top: -0.75rem;
+}
+.LinkBox {
+	border-radius: 6px;
+	height: 10vh;
+	background: white;
+	justify-content: space-between;
+	box-shadow: 1px 1px 15px -5px var(---VeryDarkViolet);
+}
+.LinkBox > * {
+	margin: 0 1.75rem;
+}
+.orignalLink {
+	color: black;
+}
+
+.shortLink {
+	color: var(---Cyan);
+	padding: 0 2rem;
+}
+
+.stats {
+	padding: 20vh 0;
+}
+.statsHeading {
+	margin: 5% 0;
+}
+/* .subh2Wrapper{
+	text-align: center;
+	width: 100%;
+} */
+/* !Format later on */
+/* .subh2{
+	opacity: 0.5;
+	width: 30%;
+} */
+
+h2 {
+	font-size: clamp(1.5rem, 2.5vw + 0.5rem , 3.5rem);
+	margin: 1rem 0;
+}
+
+.cardsWrapper {
+	position: relative;
+}
+.CardContainer {
+	justify-content: space-between;
+	padding-block: clamp(1.5rem, 7vh, 5rem);
+}
+.cardLogoWrapper {
+	background: var(---VeryDarkViolet);
+	width: clamp(4rem, 4.5vw, 5rem);
+	aspect-ratio: 1;
+	border-radius: 50%;
+	display: grid;
+	position: absolute;
+	top: -12.75%;
+	left: 2%;
+}
+.line {
+	height: 6px;
+	border-bottom: 6px solid var(---Cyan);
+	width: 100%;
+	position: absolute;
+	z-index: 0;
+	bottom: 50%;
+}
+.cardLogo {
+	margin: auto;
+	width: clamp(1.5rem, 2.5vw, 3.5rem);
+}
+.card {
+	justify-content: center;
+	position: relative;
+	background: white;
+	width: clamp(20rem, 30vw, 30rem);
+	height: clamp(20rem, 50vh, 25rem);
+	z-index: 1;
+	text-align: left;
+	border-radius: 6px;
+	box-shadow: 2px 3px 5px -3px black;
+}
+.card p,
+.card h3 {
+	padding: clamp(0.5rem, 1vw, 1rem) clamp(2rem, 1vw, 4rem);
+	/* border: 1px solid green; */
+}
+.card p{
+	font-size: clamp(8px, 1.75vh + 3px, 20px);
+}
+.card h3{
+	font-size: clamp(14px, 2vh + 5px, 24px);
+}
+.RecordsCard {
+	margin-top: 4%;
+}
+.CustomizableCard {
+	margin-top: 8%;
+}
+
+.booster {
+	background: var(---VeryDarkViolet) url(./images/bg-boost-desktop.svg);
+	background-size: cover;
+	background-origin: content-box;
+	height: 25vh;
+	gap: 2vh;
+}
+.booster h2 {
+	color: white;
+	font-size: 1.5rem;
+}
+.end {
+	background: black;
+	height: clamp(max-content, 55vh, 65vh);
+}
+
+/* this is workaround for giving svg a white color (stackoverflow):  */
+.footerLogo {
+	filter: invert(100%) sepia(92%) saturate(1%) hue-rotate(339deg)
+		brightness(110%) contrast(101%);
+	width: 121px;
+	margin: 1rem 0;
+}
+.footerTxtLogoWrapper {
+	padding: clamp(3rem, 4vh, 4rem) 0 0 0;
+	gap: clamp(1.5rem, 15%, 2.5rem);
+}
+
+.footTextWrapper li {
+	color: rgba(255, 255, 255, 0.587);
+	transition: color 300ms ease-in-out;
+}
+.footTextWrapper li:hover,
+.socialLogo {
+	cursor: pointer;
+	color: var(---Cyan);
+}
+.footTextWrapper h4 {
+	color: rgba(255, 255, 255);
+	font-weight: 600;
+	padding-bottom: 0.5rem;
+}
+.socialLogo {
+	width: clamp(1rem, 3vw, 1.5rem);
+	aspect-ratio: 1;
+}
+.socialLogo:hover {
+	fill: var(---Cyan);
+}
+/* All this is ensuring a grid layout in which icons are centered and uls are placed like flex */
+.footTextWrapper {
+	display: grid;
+	justify-items: center;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: 1fr min-content;
+	grid-column-gap: 8px;
+	grid-row-gap: 24px;
+	font-size: clamp(8px, 1.5vh + 5px, 20px);
+	padding: 0 0 2rem 0;
+	overflow: hidden;
+}
+.SMlogos {
+	gap: 4rem;
+}
+.grid-child-1 {
+	grid-area: 1 / 1 / 2 / 2;
+	justify-content: space-around;
+}
+.grid-child-2 {
+	grid-area: 1 / 2 / 2 / 3;
+	justify-content: space-around;
+}
+.grid-child-3 {
+	grid-area: 1 / 3 / 2 / 4;
+	justify-content: space-around;
+}
+.grid-child-4 {
+	grid-area: 2 / 2 / 3 / 2;
+	justify-content: space-around;
+}
+
+@media only screen and (width<=800px) {
+	.heroSection {
+		flex-direction: column-reverse;
+		justify-content: center;
+		align-items: center;
+		gap: 4rem;
+	}
+	.left {
+		margin: 0;
+		align-items: center;
+		text-align: center;
+	}
+	.right {
+		position: relative;
+		right: -2vw;
+	}
+	.hero-illustration {
+		max-width: 50vh;
+	}
+	/* .card{
+		height: clamp(30vh, 35vh, 40vh);
+	}
+	.card p {
+		font-size: clamp(10px,12px,14px)
+	} */
+	.footTextWrapper {
+		align-items: baseline;
+		grid-row-gap: 8px;
+	}
+	.footerTxtLogoWrapper {
+		flex-direction: column;
+		justify-content: center;
+		/* align-content: center; */
+		gap: 1rem;
+	}
+
+	.footerLogoWrapper {
+		display: flex;
+		justify-content: center;
+	}
+	.SMlogos {
+		gap: 2rem 1rem;
+	}
+	.end {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+}
+
+
+@media only screen and (width<=450px) {
+	.textNav{
+		display: none;
+	}
+	h1{
+		font-size: clamp(1rem, 6vh + 5px, 24px);
+		line-height: normal;
+	}
+	.SubH1 {
+		line-height: normal;
+		font-size: clamp(0.5rem, 1.25vh + 0.5rem, 0.75rem);
+		padding-left: 0.25vw;
+	}
+	.hamburger{
+		display: block;
+	}
+	/* TODO: ADD ANIMATION */
+	.hamburger > *{
+		transition: all 500ms ease-in-out;
+	}
+	
+	.Drop-Down-Menu{
+		display: none;
+		position: absolute;
+		top: 8vh;
+		flex-direction: column;
+		background: var(---DarkViolet);
+		color:white;
+		border-radius: 10px;
+		width: 90vw;
+		margin: 1rem auto;
+		z-index: 1;
+		padding: 2rem;
+	}
+	.visible{
+		display: flex;
+		left: 50%;
+		translate: -50% 0;
+		margin: auto;
+	}
+	.seperator{
+		border-bottom: 2px solid var(---Gray);
+		height: 1px;
+   		width: 100%;
+		
+	}
+	.navtxt{
+		padding-top: 5%;
+		color: white;
+	}
+	.DPM-text{
+		display: grid;
+		gap: 2rem;
+		padding: 5% 0;
+		place-items: centre;
+	}
+	.SignUp{
+		width: 100%;
+	}
+	.UrlInputWrapper {
+		flex-direction: column;
+		flex-direction: column;
+		gap: 0.5rem;
+		height: max-content;
+		padding: 1rem 0;
+	}
+	.LinkBox{
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		height: max(max-content, 18vh);
+	}
+	.LinkBox > *{
+		margin-inline: 0;
+	}
+	.ItalicLabel {
+		position: relative;
+	}
+	.UrlInputWrapper > *{
+		width: 90%;
+	}
+	.line{
+		inset: 0;
+		border-bottom: none;
+		border-left: 6px solid var(---Cyan);
+		height: 80%;
+		width: 6px;
+		top: 50%;
+		left: 50%;
+		translate: -50% -50%;
+	
+	}
+	/* .cardsWrapper {
+
+	} */
+	.CardContainer {
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+	.card{
+		width: 80%;
+	}
+	.footTextWrapper{
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+		gap: clamp(1.5rem, 5vh, 2rem);
+	}
+	.footTextWrapper > *{
+		width: 100%;
+	}
+}
