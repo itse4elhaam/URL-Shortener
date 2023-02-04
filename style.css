@@ -481,7 +481,7 @@ h2 {
 }
 
 
-@media only screen and (width<=450px) {
+@media only screen and (width<=500px) {
 	.textNav{
 		display: none;
 	}
