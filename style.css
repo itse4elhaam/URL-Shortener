@@ -23,9 +23,9 @@ nav {
 .UserLogIn {
 	gap: 1rem;
 }
-.navLogo{
-	filter: invert(73%) sepia(100%) saturate(365%)
-			hue-rotate(120deg) brightness(85%) contrast(91%);
+.navLogo {
+	filter: invert(73%) sepia(100%) saturate(365%) hue-rotate(120deg)
+		brightness(85%) contrast(91%);
 }
 /* *Styling the hero section here:  */
 .heroSection {
@@ -38,7 +38,7 @@ h1 {
 	font-size: clamp(0.75rem, 6vh + 1rem, 5rem);
 	line-height: clamp(2rem, 10vh + 1rem, 6rem);
 }
-.cyanH1{
+.cyanH1 {
 	color: var(---Cyan);
 }
 .SubH1 {
@@ -59,6 +59,12 @@ h1 {
 	cursor: pointer;
 	color: black;
 }
+
+.UrlInputWrapper input::placeholder {
+	color: gray;
+	opacity: 0.5;
+}
+
 @media only screen and (width >800px) {
 	.right {
 		position: absolute;
@@ -159,19 +165,6 @@ main {
 	outline: none;
 	border: 3px solid var(---Red);
 }
-.ItalicLabel {
-	display: none;
-	position: absolute;
-	font-size: x-small;
-	color: var(---Red);
-	font-style: italic;
-	top: 50%;
-	left: 2%;
-	transition: all 250ms ease-in-out;
-}
-.UrlInput:focus + .ItalicLabel {
-	display: block;
-}
 .btnShorten {
 	padding: 1rem 2.5rem;
 	border-radius: 6px;
@@ -181,69 +174,69 @@ main {
 	max-height: 50%;
 	width: max(50%, 20rem);
 	border-radius: 0.75rem;
-    font-size: clamp(8px, 2vh + .5rem, 16px);	
-	font-weight:lighter;
-    text-align: center;
-    box-shadow: 2px 2px 8px rgba(0,0,0,0.3);
-    animation: pulse 3s ease-in-out infinite;
+	font-size: clamp(8px, 2vh + 0.5rem, 16px);
+	font-weight: lighter;
+	text-align: center;
+	box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+	animation: pulse 3s ease-in-out infinite;
 	gap: 2.5%;
 	padding: 1%;
-  }
-   .loading span {
-	width: clamp(max-content ,50%, max-content);
-    display: inline-block;
-    overflow: hidden;
+}
+.loading span {
+	width: clamp(max-content, 50%, max-content);
+	display: inline-block;
+	overflow: hidden;
 	white-space: nowrap;
-    animation: typewriter 2s steps(40, end) infinite;
+	animation: typewriter 2s steps(40, end) infinite;
 	color: var(---DarkViolet);
-  }
+}
 
-  @keyframes pulse {
-    0% {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(1.05);
-    }
-    100% {
-      transform: scale(1);
-    }
-  }
-  @keyframes typewriter {
-    0% {
-      width: 0;
-    }
-    10% {
-      width: 2.5%;
-    }
-    20% {
-      width: 5%;
-    }
-    30% {
-      width: 7.5%;
-    }
-    40% {
-      width: 10%;
-    }
-    50% {
-      width: 12.5%;
-    }
-    60% {
-      width: 15%;
-    }
-    70% {
-      width: 17.5%;
-    }
-    80% {
-      width: 20%;
-    }
-    90% {
-      width: 22.5%;
-    }
-    100% {
-      width: 25%;
-    }
-  }
+@keyframes pulse {
+	0% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(1.05);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+@keyframes typewriter {
+	0% {
+		width: 0;
+	}
+	10% {
+		width: 2.5%;
+	}
+	20% {
+		width: 5%;
+	}
+	30% {
+		width: 7.5%;
+	}
+	40% {
+		width: 10%;
+	}
+	50% {
+		width: 12.5%;
+	}
+	60% {
+		width: 15%;
+	}
+	70% {
+		width: 17.5%;
+	}
+	80% {
+		width: 20%;
+	}
+	90% {
+		width: 22.5%;
+	}
+	100% {
+		width: 25%;
+	}
+}
 
 .copied {
 	background-color: var(---VeryDarkViolet);
@@ -252,22 +245,36 @@ main {
 	margin-top: -0.75rem;
 }
 .LinkBox {
+	padding-block: 1.5rem;
 	border-radius: 6px;
 	height: 10vh;
 	background: white;
 	justify-content: space-between;
 	box-shadow: 1px 1px 15px -5px var(---VeryDarkViolet);
 }
+
+@media only screen and (max-width: 1000px) {
+	.LinkBox {
+		padding-block: 1.5rem;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 0.75rem;
+		height: max-content;
+	}
+}
+
 .LinkBox > * {
 	margin: 0 1.75rem;
 }
 .orignalLink {
-	color: black;
+	color: rgba(0, 0, 0, 0.537);
 }
 
 .shortLink {
 	color: var(---Cyan);
 	padding: 0 2rem;
+	font-weight: 600;
 }
 
 .stats {
@@ -287,7 +294,7 @@ main {
 } */
 
 h2 {
-	font-size: clamp(1.5rem, 2.5vw + 0.5rem , 3.5rem);
+	font-size: clamp(1.5rem, 2.5vw + 0.5rem, 3.5rem);
 	margin: 1rem 0;
 }
 
@@ -336,10 +343,10 @@ h2 {
 	padding: clamp(0.5rem, 1vw, 1rem) clamp(2rem, 1vw, 4rem);
 	/* border: 1px solid green; */
 }
-.card p{
+.card p {
 	font-size: clamp(8px, 1.75vh + 3px, 20px);
 }
-.card h3{
+.card h3 {
 	font-size: clamp(14px, 2vh + 5px, 24px);
 }
 .RecordsCard {
@@ -480,12 +487,11 @@ h2 {
 	}
 }
 
-
-@media only screen and (width<=500px) {
-	.textNav{
+@media only screen and (width<=700px) {
+	.textNav {
 		display: none;
 	}
-	h1{
+	h1 {
 		font-size: clamp(1rem, 6vh + 5px, 24px);
 		line-height: normal;
 	}
@@ -494,50 +500,49 @@ h2 {
 		font-size: clamp(0.5rem, 1.25vh + 0.5rem, 0.75rem);
 		padding-left: 0.25vw;
 	}
-	.hamburger{
+	.hamburger {
 		display: block;
 	}
 	/* TODO: ADD ANIMATION */
-	.hamburger > *{
+	.hamburger > * {
 		transition: all 500ms ease-in-out;
 	}
-	
-	.Drop-Down-Menu{
+
+	.Drop-Down-Menu {
 		display: none;
 		position: absolute;
 		top: 8vh;
 		flex-direction: column;
 		background: var(---DarkViolet);
-		color:white;
+		color: white;
 		border-radius: 10px;
 		width: 90vw;
 		margin: 1rem auto;
 		z-index: 1;
 		padding: 2rem;
 	}
-	.visible{
+	.visible {
 		display: flex;
 		left: 50%;
 		translate: -50% 0;
 		margin: auto;
 	}
-	.seperator{
+	.seperator {
 		border-bottom: 2px solid var(---Gray);
 		height: 1px;
-   		width: 100%;
-		
+		width: 100%;
 	}
-	.navtxt{
+	.navtxt {
 		padding-top: 5%;
 		color: white;
 	}
-	.DPM-text{
+	.DPM-text {
 		display: grid;
 		gap: 2rem;
 		padding: 5% 0;
 		place-items: centre;
 	}
-	.SignUp{
+	.SignUp {
 		width: 100%;
 	}
 	.UrlInputWrapper {
@@ -547,22 +552,17 @@ h2 {
 		height: max-content;
 		padding: 1rem 0;
 	}
-	.LinkBox{
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		height: max(max-content, 18vh);
-	}
-	.LinkBox > *{
+
+	.LinkBox > * {
 		margin-inline: 0;
 	}
 	.ItalicLabel {
 		position: relative;
 	}
-	.UrlInputWrapper > *{
+	.UrlInputWrapper > * {
 		width: 90%;
 	}
-	.line{
+	.line {
 		inset: 0;
 		border-bottom: none;
 		border-left: 6px solid var(---Cyan);
@@ -571,7 +571,6 @@ h2 {
 		top: 50%;
 		left: 50%;
 		translate: -50% -50%;
-	
 	}
 	/* .cardsWrapper {
 
@@ -581,16 +580,16 @@ h2 {
 		justify-content: center;
 		align-items: center;
 	}
-	.card{
+	.card {
 		width: 80%;
 	}
-	.footTextWrapper{
+	.footTextWrapper {
 		display: flex;
 		flex-direction: column;
 		text-align: center;
 		gap: clamp(1.5rem, 5vh, 2rem);
 	}
-	.footTextWrapper > *{
+	.footTextWrapper > * {
 		width: 100%;
 	}
 }

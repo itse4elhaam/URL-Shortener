@@ -1,4 +1,3 @@
-//TODO:make  scroll button  that takes you to the url shortner
 const hamburger = document.querySelector('.hamburger');
 const menuOpen = document.querySelector('.menu-open');
 const menuClose = document.querySelector('.menu-close');
@@ -119,7 +118,7 @@ function MakeLinkBox(originalURL, shortURL) {
     linkBox.appendChild(orgUrlAnchor);
     linkBox.appendChild(shortLinkWrapper);
     shortLinkWrapper.appendChild(shortLink);
-    shortLinkWrapper.appendChild(btnCopy);
+    linkBox.appendChild(btnCopy);
 
     
 
